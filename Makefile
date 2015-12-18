@@ -6,13 +6,13 @@
 #    By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:45:06 by cfelbacq          #+#    #+#              #
-#    Updated: 2015/12/17 14:26:29 by cfelbacq         ###   ########.fr        #
+#    Updated: 2015/12/18 10:30:17 by cfelbacq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fillit
 
-SRC = arrange.c \
+SRC = ft_arrange.c \
 	  ft_check.c \
 	  ft_get_nb_tetrimino.c \
 	  ft_readstdin.c \

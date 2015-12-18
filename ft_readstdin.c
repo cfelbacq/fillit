@@ -6,7 +6,7 @@
 /*   By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/06 14:31:53 by cfelbacq          #+#    #+#             */
-/*   Updated: 2015/12/17 14:55:31 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/18 10:17:25 by cfelbacq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,11 @@ char			**read_stdin(char *argv)
 {
 	int		fd;
 	int		ret;
-	int		i;
 	char	buf[BUFF_SIZE + 1];
 	char	**tmp;
 
 	fd = open(argv, O_RDONLY);
 	ret = 1;
-	i = 0;
 	tmp = NULL;
 	while ((ret = read(fd, buf, BUFF_SIZE)) != 0)
 		buf[ret] = '\0';
