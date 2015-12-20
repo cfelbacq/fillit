@@ -6,7 +6,7 @@
 /*   By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 16:59:35 by cfelbacq          #+#    #+#             */
-/*   Updated: 2015/12/19 15:01:15 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/20 17:38:42 by cfelbacq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,22 +69,25 @@ static	int		ft_check_line(char *s)
 static	int		ft_check_shape(char *s)
 {
 	int i;
-	int ok;
+	int height;
+	int width;
 
 	i = 0;
-	ok = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == '#')
-		{
-			if ((s[i + 1] == '#' && s[i - 1] == '#') || s[i + 5] == '#' || \
-				s[i - 5] == '#')
-				ok++;
-			if (ok == 4)
-				return (1);
-		}
-		i++;
-	}
+	height = get_height(s);
+	width = get_width(s);
+	if (ft_is_alone(s) == 0)
+			return (0);
+	if (height == 2 && width == 2)
+		return (1);
+	else if (height == 2 && width == 3)
+		return (1);
+	else if (height == 3 && width == 2)
+		return (1);
+	else if (height == 1 && width == 4)
+		return (1);
+	else if (height == 4 && width == 1)
+		return (1);
+	else
 	return (0);
 }
 

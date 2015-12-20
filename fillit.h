@@ -6,7 +6,7 @@
 /*   By: jdhaisne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 14:46:29 by jdhaisne          #+#    #+#             */
-/*   Updated: 2015/12/17 15:00:26 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/20 17:40:58 by cfelbacq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,9 @@ char					**solve(t_tetrimino *start, int square_size,\
 		char **tab_solved);
 char					**create_tab(char **tab, int square_size);
 void					ft_free_tab(char **tab, int tab_size);
-
+int						ft_check_square(char *s);
+int						ft_check_bar(char *s);
+int						get_height(char *s);
+int						get_width(char *s);
+int						ft_is_alone(char *s);
 #endif
