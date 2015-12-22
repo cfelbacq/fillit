@@ -6,7 +6,7 @@
 /*   By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 16:59:35 by cfelbacq          #+#    #+#             */
-/*   Updated: 2015/12/20 17:38:42 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/22 15:42:02 by cfelbacq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,9 @@ static	int		ft_check_shape(char *s)
 	height = get_height(s);
 	width = get_width(s);
 	if (ft_is_alone(s) == 0)
-			return (0);
+		return (0);
+	if (ft_check_void_int(s) == 0 || width == 0 || height == 0)
+		return (0);
 	if (height == 2 && width == 2)
 		return (1);
 	else if (height == 2 && width == 3)
@@ -88,7 +90,7 @@ static	int		ft_check_shape(char *s)
 	else if (height == 4 && width == 1)
 		return (1);
 	else
-	return (0);
+		return (0);
 }
 
 int				ft_check(char **tab)
