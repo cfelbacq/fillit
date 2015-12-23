@@ -6,7 +6,7 @@
 /*   By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:50:20 by cfelbacq          #+#    #+#             */
-/*   Updated: 2015/12/17 15:00:22 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/23 11:49:35 by jdhaisne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,16 @@ int			main(int argc, char **argv)
 
 	start = NULL;
 	tab = NULL;
-	g_nb_tetrimino = 0;
 	if (argc != 2)
 	{
 		ft_putendl("error");
 		return (0);
 	}
-	tab = read_stdin(argv[1]);
+	if ((tab = read_stdin(argv[1])) == NULL)
+	{
+		ft_putendl("error");
+		return (0);
+	}
 	if (ft_check(tab) == 0)
 	{
 		ft_putendl("error");
@@ -61,7 +64,6 @@ int			main(int argc, char **argv)
 	}
 	start = ft_splittab(tab);
 	ft_free_tab(tab, g_nb_tetrimino + 1);
-	arrange(start);
 	puttab(solve(start, 2, NULL));
 	return (1);
 }
