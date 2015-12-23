@@ -6,7 +6,7 @@
 /*   By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 16:59:35 by cfelbacq          #+#    #+#             */
-/*   Updated: 2015/12/22 15:42:02 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/23 16:25:49 by jdhaisne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static	int		ft_check_char(char *s)
 			return (0);
 		i++;
 	}
-	if (hash != 4 || point != 12 || endline != 3)
+	if (hash != 4 || point != 12 || endline != 4)
 		return (0);
 	return (1);
 }
@@ -108,6 +108,30 @@ int				ft_check(char **tab)
 			return (0);
 		if (ft_check_shape(tab[i]) != 1)
 			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int				first_test(char *buf)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (buf[i] != '\0')
+	{
+		if (buf[i] == '\n')
+			j++;
+		if (j == 4)
+		{
+			if (buf[i + 1] != '\n' && buf[i + 1] != '\0')
+				return (0);
+			if (buf[i + 1] == '\n')
+				i++;
+			j = 0;
+		}
 		i++;
 	}
 	return (1);

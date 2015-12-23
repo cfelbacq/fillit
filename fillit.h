@@ -6,7 +6,7 @@
 /*   By: jdhaisne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/13 14:46:29 by jdhaisne          #+#    #+#             */
-/*   Updated: 2015/12/22 15:24:34 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/23 13:55:23 by jdhaisne         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,5 @@ int						get_height(char *s);
 int						get_width(char *s);
 int						ft_is_alone(char *s);
 int						ft_check_void_int(char *s);
+int						first_test(char *buf);
 #endif

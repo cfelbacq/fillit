@@ -6,7 +6,7 @@
 #    By: cfelbacq <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/07 15:45:06 by cfelbacq          #+#    #+#              #
-#    Updated: 2015/12/20 16:32:24 by cfelbacq         ###   ########.fr        #
+#    Updated: 2015/12/23 14:31:00 by cfelbacq         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,18 +21,27 @@ SRC = ft_arrange.c \
 	  ft_solve.c \
 	  main.c 
 
-OBJ = $(SRC : .c = .o)
+OBJ = ft_arrange.o \
+	  ft_check.o \
+	  ft_check_shape.o \
+	  ft_get_nb_tetrimino.o \
+	  ft_readstdin.o \
+	  ft_tetrimino.o \
+	  ft_solve.o \
+	  main.o
 
 LIB = libft.a
 
 all : $(NAME)
 
-$(NAME) : 
-	gcc -Werror -Wall -Wextra -o $(NAME) $(SRC) $(LIB)
+$(NAME) :
+	gcc -Werror -Wall -Wextra -c $(SRC)
+	gcc -Werror -Wall -Wextra -o $(NAME) $(OBJ) $(LIB)
 
 clean : 
-	rm -rf $(NAME)
+	rm -rf $(OBJ)
 
 fclean : clean
+	rm -rf $(NAME)
 
 re : fclean all
