@@ -6,7 +6,7 @@
 /*   By: jdhaisne <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 12:25:31 by jdhaisne          #+#    #+#             */
-/*   Updated: 2015/12/17 14:22:06 by cfelbacq         ###   ########.fr       */
+/*   Updated: 2015/12/24 13:46:17 by cfelbacq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,7 @@ int				place(t_tetrimino *start, int square_size, char **tab)
 
 char			**solve(t_tetrimino *start, int square_size, char **tab_solved)
 {
+	arrange(start);
 	tab_solved = create_tab(tab_solved, square_size);
 	while (place(start, square_size, tab_solved) == 0)
 	{
